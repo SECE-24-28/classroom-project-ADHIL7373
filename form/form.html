@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action ="check.html" method ="get" onsubmit="return validateform()">
+        <label> ENTER THE NAME:</label>
+        <input type = "text" name ="username" id="tx">
+        <span id="er"></span><br><br>
+        <label> ENTER EMAIL</label>
+        <input type = "text" name="email" id ="ed">
+        <span id="ee"></span><br><br>
+        <label> PASSWORD</label>
+        <input type ="password" name ="password" id ="pd">
+        <span id="p"></span><br><br>
+
+        <label> CONFORM PASSWORD</label>
+        <input type ="password" name="cpassword" id ="cpd">
+        <span id="cpass"></span><br><br>
+
+        <label>ENTER THE GENDER:</label>
+        <input type="radio" id="rm" name ="gender" value ="male">male
+        <input type="radio" id="rf" name ="gender" value ="female">female
+        <span id="rb"></span><br><br>
+        <input type ="submit" value ="Click"  >
+        <input type ="reset" value ="reset">
+    
+
+
+
+    </form>
+    <script type="text/javascript"> 
+        function validateform(){
+            var isvalid=true;
+            
+            if(document.getElementById("tx").value===""){
+                document.getElementById("er").innerHTML="please enter the name";
+                 document.getElementById("er").style.color="red";
+                    isvalid=false;
+            }else{
+                document.getElementById("er").innerHTML="Done";
+                document.getElementById("er").style.color="green";
+            }
+            if(document.getElementById("ed").value===""){
+                document.getElementById("ee").innerHTML="please enter email";
+                document.getElementById("ee").style.color="red";
+                isvalid=false;
+            }
+            else{
+                document.getElementById("ee").innerHTML="Done";
+                document.getElementById("ee").style.color="green";
+            }
+            if(document.getElementById("pd").value===""){
+                document.getElementById("p").innerHTML="please enter password";
+                document.getElementById("p").style.color="red";
+            isvalid=false;            
+            }else{
+                document.getElementById("p").innerHTML="done";
+                document.getElementById("p").style.color="green";
+            }
+            if(document.getElementById("cpd").value===""){
+                document.getElementById("cpass").innerHTML="please enter conform password";
+                document.getElementById("cpass").style.color="red";
+                isvalid=false;
+            }
+            else{ if(document.getElementById("cpd").value!==document.getElementById("pd").value){
+ document.getElementById("cpass").innerHTML=" conform password and password must be same"; ;
+                document.getElementById("cpass").style.color="red";
+
+            }
+                else{
+
+              
+                document.getElementById("cpass").innerHTML="done";
+                document.getElementById("cpass").style.color="green";
+            }}
+            if(document.getElementById("rm").checked!==true && document.getElementById("rf").checked!==true){
+               isvalid=false;  
+                document.getElementById("rb").innerHTML="please select the gender"
+                document.getElementById("rb").style.color="red";
+            var genderselected= document.querySelector("input[name='gender']:checked");
+            if(!genderselected){
+                document.getElementById("rb").innerHTML="please select the gender";
+                document.getElementById("rb").style.color="red";
+                isvalid=false;
+            }
+            }
+            else{
+                document.getElementById("rb").innerHTML="done";
+                document.getElementById("rb").style.color="green";
+            }
+                 return isvalid;
+           }
+       
+        
+    </script>
+</body>
+</html>
