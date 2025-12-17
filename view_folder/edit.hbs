@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Edit Book</h1>
+    <form action="/update/{{book._id}}" method="post">
+        Title:
+        <input type="text" name="title1" value="{{book.title}}">
+        author:
+        <input type="text" name="author1" value="{{book.author}}">
+        <button type="submit">Update Book</button>
+    </form>
+
+</body>
+</html>
